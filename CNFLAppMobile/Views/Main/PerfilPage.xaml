@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.Main.PerfilPage"
+             Title="Mi Perfil"
+             BackgroundColor="#FFF8F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+
+            <!-- Foto de Perfil con Border en lugar de Frame -->
+            <Border BackgroundColor="#F47920" 
+                    HeightRequest="100" 
+                    WidthRequest="100" 
+                    HorizontalOptions="Center"
+                    Padding="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="50"/>
+                </Border.StrokeShape>
+                <Label Text="MG" FontSize="32" FontAttributes="Bold" TextColor="White" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Border>
+
+            <Label Text="María González" FontSize="20" FontAttributes="Bold" TextColor="#2A1A0A" HorizontalTextAlignment="Center"/>
+            <Label Text="maria.gonzalez@correo.com" FontSize="14" TextColor="#7A5A3A" HorizontalTextAlignment="Center"/>
+
+            <!-- Datos Personales -->
+            <Label Text="Datos Personales" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto" ColumnDefinitions="*,*" RowSpacing="12" ColumnSpacing="12">
+                <Label Grid.Row="0" Grid.Column="0" Text="Cédula" FontSize="12" TextColor="#7A5A3A"/>
+                <Label Grid.Row="0" Grid.Column="1" Text="1-2345-6789" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+
+                <Label Grid.Row="1" Grid.Column="0" Text="Teléfono" FontSize="12" TextColor="#7A5A3A"/>
+                <Label Grid.Row="1" Grid.Column="1" Text="8888-7777" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+
+                <Label Grid.Row="2" Grid.Column="0" Text="NISE" FontSize="12" TextColor="#7A5A3A"/>
+                <Label Grid.Row="2" Grid.Column="1" Text="1234567-8" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+
+                <Label Grid.Row="3" Grid.Column="0" Text="Tarifa" FontSize="12" TextColor="#7A5A3A"/>
+                <Label Grid.Row="3" Grid.Column="1" Text="Residencial" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+            </Grid>
+
+            <!-- Editar Datos -->
+            <Button Text="✏️ Editar Datos" 
+                    BackgroundColor="#1E23E6" 
+                    TextColor="White" 
+                    CornerRadius="12"
+                    HeightRequest="45"/>
+
+            <!-- Configuración -->
+            <Label Text="Configuración" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="*,*" RowSpacing="12">
+                    <Label Grid.Row="0" Grid.Column="0" Text="🔔 Notificaciones" FontSize="13" TextColor="#2A1A0A"/>
+                    <Switch Grid.Row="0" Grid.Column="1" IsToggled="True" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" Text="🌙 Modo Oscuro" FontSize="13" TextColor="#2A1A0A"/>
+                    <Switch Grid.Row="1" Grid.Column="1" IsToggled="False" HorizontalOptions="End"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" Text="🔐 Biometría" FontSize="13" TextColor="#2A1A0A"/>
+                    <Switch Grid.Row="2" Grid.Column="1" IsToggled="True" HorizontalOptions="End"/>
+                </Grid>
+            </Border>
+
+            <!-- Accesibilidad con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Label Text="♿ Accesibilidad" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+
+                    <HorizontalStackLayout Spacing="8">
+                        <Button Text="A+" BackgroundColor="#F47920" TextColor="White" CornerRadius="12" WidthRequest="50"/>
+                        <Button Text="A-" BackgroundColor="#1E23E6" TextColor="White" CornerRadius="12" WidthRequest="50"/>
+                        <Button Text="Alto Contraste" BackgroundColor="#2E7D32" TextColor="White" CornerRadius="12" WidthRequest="120"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Cerrar Sesión -->
+            <Button Text="Cerrar Sesión" 
+                    BackgroundColor="#FFEBEE" 
+                    TextColor="#E53935" 
+                    CornerRadius="12"
+                    HeightRequest="45"
+                    Margin="0,8,0,0"
+                    Clicked="OnCerrarSesionClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

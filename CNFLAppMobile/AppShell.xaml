@@ -1,49 +1,51 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Shell
-    x:Class="CNFLAppMobile.AppShell"
-    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:views="clr-namespace:CNFLAppMobile.Views"
-    Shell.FlyoutBehavior="Disabled">
+<Shell xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+       xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+       xmlns:public="clr-namespace:CNFLAppMobile.Views.Public"
+       xmlns:main="clr-namespace:CNFLAppMobile.Views.Main"
+       x:Class="CNFLAppMobile.AppShell">
 
-    <!-- Rutas Públicas -->
-    <ShellContent Title="HomePublic"
-                  ContentTemplate="{DataTemplate views:HomePublicPage}"
-                  Route="HomePublicPage" />
+    <!-- Ruta por defecto (Home) -->
+    <ShellContent Title="Home" 
+                  Route="HomePublic" 
+                  ContentTemplate="{DataTemplate public:HomePublicPage}" />
 
-    <ShellContent Title="Login"
-                  ContentTemplate="{DataTemplate views:LoginPage}"
-                  Route="LoginPage" />
+    <!-- Rutas Públicas (sin login) -->
+    <ShellContent Title="Login" 
+                  Route="Login" 
+                  ContentTemplate="{DataTemplate public:LoginPage}" />
 
-    <ShellContent Title="Registro"
-                  ContentTemplate="{DataTemplate views:RegistroPage}"
-                  Route="RegistroPage" />
+    <ShellContent Title="Registro" 
+                  Route="Registro" 
+                  ContentTemplate="{DataTemplate public:RegistroPage}" />
 
-    <ShellContent Title="RecuperarClave"
-                  ContentTemplate="{DataTemplate views:RecuperarClavePage}"
-                  Route="RecuperarClavePage" />
+    <ShellContent Title="RecuperarClave" 
+                  Route="RecuperarClave" 
+                  ContentTemplate="{DataTemplate public:RecuperarClavePage}" />
 
-    <!-- TabBar para usuarios logueados -->
-    <TabBar>
-        <Tab Title="Inicio" Icon="home.png">
-            <ShellContent ContentTemplate="{DataTemplate views:InicioPage}"
-                          Route="InicioPage" />
-        </Tab>
-        <Tab Title="Trámites" Icon="tramites.png">
-            <ShellContent ContentTemplate="{DataTemplate views:TramitesPage}" />
-        </Tab>
-        <Tab Title="Pagos" Icon="pagos.png">
-            <ShellContent ContentTemplate="{DataTemplate views:PagosPage}" />
-        </Tab>
-        <Tab Title="Tienda" Icon="tienda.png">
-            <ShellContent ContentTemplate="{DataTemplate views:TiendaPage}" />
-        </Tab>
-        <Tab Title="Reportes" Icon="reportes.png">
-            <ShellContent ContentTemplate="{DataTemplate views:ReportesPage}" />
-        </Tab>
-        <Tab Title="Perfil" Icon="perfil.png">
-            <ShellContent ContentTemplate="{DataTemplate views:PerfilPage}" />
-        </Tab>
-    </TabBar>
+    <!-- Rutas Principales (con login) -->
+    <ShellContent Title="Inicio" 
+                  Route="Inicio" 
+                  ContentTemplate="{DataTemplate main:InicioPage}" />
+
+    <ShellContent Title="Pagos" 
+                  Route="Pagos" 
+                  ContentTemplate="{DataTemplate main:PagosPage}" />
+
+    <ShellContent Title="Reportes" 
+                  Route="Reportes" 
+                  ContentTemplate="{DataTemplate main:ReportesPage}" />
+
+    <ShellContent Title="Tienda" 
+                  Route="Tienda" 
+                  ContentTemplate="{DataTemplate main:TiendaPage}" />
+
+    <ShellContent Title="Trámites" 
+                  Route="Tramites" 
+                  ContentTemplate="{DataTemplate main:TramitesPage}" />
+
+    <ShellContent Title="Perfil" 
+                  Route="Perfil" 
+                  ContentTemplate="{DataTemplate main:PerfilPage}" />
 
 </Shell>

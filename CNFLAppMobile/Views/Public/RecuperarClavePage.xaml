@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.Public.RecuperarClavePage"
+             Title="Recuperar Clave"
+             BackgroundColor="#FFF8F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="30,40,30,20">
+
+            <Label Text="❓ Recuperar Contraseña" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#2A1A0A" 
+                   HorizontalTextAlignment="Center"/>
+
+            <Label Text="Ingresa tu cédula y te enviaremos un enlace a tu correo" 
+                   FontSize="14" 
+                   TextColor="#7A5A3A" 
+                   HorizontalTextAlignment="Center"/>
+
+            <!-- Campo: Cédula -->
+            <VerticalStackLayout Spacing="4" Margin="0,20,0,0">
+                <Label Text="Cédula" FontSize="12" FontAttributes="Bold" TextColor="#7A5A3A"/>
+                <Entry Placeholder="1 2345 6789" 
+                       Keyboard="Numeric"
+                       BackgroundColor="#FFFFFF"
+                       HeightRequest="50"/>
+            </VerticalStackLayout>
+
+            <!-- Campo: Correo -->
+            <VerticalStackLayout Spacing="4">
+                <Label Text="Correo Electrónico" FontSize="12" FontAttributes="Bold" TextColor="#7A5A3A"/>
+                <Entry Placeholder="maria@correo.com" 
+                       Keyboard="Email"
+                       BackgroundColor="#FFFFFF"
+                       HeightRequest="50"/>
+            </VerticalStackLayout>
+
+            <!-- Botón Enviar -->
+            <Button Text="Enviar Enlace" 
+                    BackgroundColor="#64B9CD" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    Clicked="OnEnviarClicked"/>
+
+            <!-- Mensaje informativo con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFF3E0" 
+                    Padding="12"
+                    StrokeThickness="1"
+                    Stroke="#FFE0B2">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Label Text="📧 Revisa tu correo" 
+                           FontSize="12" 
+                           FontAttributes="Bold" 
+                           TextColor="#E65100"/>
+                    <Label Text="Te enviaremos un enlace para restablecer tu contraseña" 
+                           FontSize="11" 
+                           TextColor="#BF360C"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Enlace a Login -->
+            <Label HorizontalTextAlignment="Center" Margin="0,10,0,0">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="¿Recordaste tu contraseña? " TextColor="#7A5A3A"/>
+                        <Span Text="Inicia Sesión" TextColor="#F47920" FontAttributes="Bold">
+                            <Span.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding NavigateToLoginCommand}"/>
+                            </Span.GestureRecognizers>
+                        </Span>
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.Main.TiendaPage"
+             Title="Tienda"
+             BackgroundColor="#FFF8F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+
+            <Label Text="🏪 Tienda CNFL" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#2A1A0A"/>
+
+            <Label Text="Productos y servicios para tu hogar" 
+                   FontSize="14" 
+                   TextColor="#7A5A3A"/>
+
+            <!-- Banner Oferta con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFD200" 
+                    Padding="16"
+                    StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <VerticalStackLayout>
+                        <Label Text="🌞 Energía Solar" FontSize="14" FontAttributes="Bold" TextColor="#F47920"/>
+                        <Label Text="Hasta 30% de descuento" FontSize="20" FontAttributes="Bold" TextColor="#F47920"/>
+                        <Label Text="Solo este mes" FontSize="12" TextColor="#F47920"/>
+                    </VerticalStackLayout>
+                    <Label Grid.Column="1" Text="☀️" FontSize="48" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Categorías -->
+            <Label Text="Categorías" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <HorizontalStackLayout Spacing="8">
+                <Button Text="Todos" BackgroundColor="#F47920" TextColor="White" CornerRadius="20" HeightRequest="35"/>
+                <Button Text="Solar" BackgroundColor="#FFF0E6" TextColor="#7A5A3A" CornerRadius="20" HeightRequest="35"/>
+                <Button Text="Smart" BackgroundColor="#FFF0E6" TextColor="#7A5A3A" CornerRadius="20" HeightRequest="35"/>
+                <Button Text="VE" BackgroundColor="#FFF0E6" TextColor="#7A5A3A" CornerRadius="20" HeightRequest="35"/>
+            </HorizontalStackLayout>
+
+            <!-- Productos -->
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*" RowSpacing="12" ColumnSpacing="12">
+
+                <!-- Producto 1 con Border en lugar de Frame -->
+                <Border Grid.Row="0" Grid.Column="0" 
+                        BackgroundColor="#FFFFFF" 
+                        Padding="12"
+                        StrokeThickness="1"
+                        Stroke="#F0D0B0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout>
+                        <Label Text="☀️" FontSize="48" HorizontalTextAlignment="Center"/>
+                        <Label Text="Panel Solar 400W" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A" HorizontalTextAlignment="Center"/>
+                        <Label Text="₡ 185.000" FontSize="14" FontAttributes="Bold" TextColor="#F47920" HorizontalTextAlignment="Center"/>
+                        <Button Text="Agregar" BackgroundColor="#1E23E6" TextColor="White" CornerRadius="12" HeightRequest="35" Margin="0,4,0,0"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Producto 2 con Border en lugar de Frame -->
+                <Border Grid.Row="0" Grid.Column="1" 
+                        BackgroundColor="#FFFFFF" 
+                        Padding="12"
+                        StrokeThickness="1"
+                        Stroke="#F0D0B0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout>
+                        <Label Text="📡" FontSize="48" HorizontalTextAlignment="Center"/>
+                        <Label Text="Medidor Inteligente" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A" HorizontalTextAlignment="Center"/>
+                        <Label Text="₡ 42.000" FontSize="14" FontAttributes="Bold" TextColor="#F47920" HorizontalTextAlignment="Center"/>
+                        <Button Text="Agregar" BackgroundColor="#1E23E6" TextColor="White" CornerRadius="12" HeightRequest="35" Margin="0,4,0,0"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Producto 3 con Border en lugar de Frame -->
+                <Border Grid.Row="1" Grid.Column="0" 
+                        BackgroundColor="#FFFFFF" 
+                        Padding="12"
+                        StrokeThickness="1"
+                        Stroke="#F0D0B0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout>
+                        <Label Text="💡" FontSize="48" HorizontalTextAlignment="Center"/>
+                        <Label Text="Bombillos LED x10" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A" HorizontalTextAlignment="Center"/>
+                        <Label Text="₡ 12.500" FontSize="14" FontAttributes="Bold" TextColor="#F47920" HorizontalTextAlignment="Center"/>
+                        <Label Text="🔥 Oferta" FontSize="10" TextColor="#E53935" HorizontalTextAlignment="Center"/>
+                        <Button Text="Agregar" BackgroundColor="#1E23E6" TextColor="White" CornerRadius="12" HeightRequest="35" Margin="0,4,0,0"/>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Producto 4 con Border en lugar de Frame -->
+                <Border Grid.Row="1" Grid.Column="1" 
+                        BackgroundColor="#FFFFFF" 
+                        Padding="12"
+                        StrokeThickness="1"
+                        Stroke="#F0D0B0">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="12"/>
+                    </Border.StrokeShape>
+                    <VerticalStackLayout>
+                        <Label Text="🔌" FontSize="48" HorizontalTextAlignment="Center"/>
+                        <Label Text="Cargador VE" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A" HorizontalTextAlignment="Center"/>
+                        <Label Text="₡ 320.000" FontSize="14" FontAttributes="Bold" TextColor="#F47920" HorizontalTextAlignment="Center"/>
+                        <Button Text="Agregar" BackgroundColor="#1E23E6" TextColor="White" CornerRadius="12" HeightRequest="35" Margin="0,4,0,0"/>
+                    </VerticalStackLayout>
+                </Border>
+
+            </Grid>
+
+            <Button Text="Ver todos los productos" 
+                    BackgroundColor="#F47920" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="45"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

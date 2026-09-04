@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.Main.PagosPage"
+             Title="Pagos"
+             BackgroundColor="#FFF8F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+
+            <Label Text="📄 Mis Facturas" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#2A1A0A"/>
+
+            <Label Text="Historial y pagos" 
+                   FontSize="14" 
+                   TextColor="#7A5A3A"/>
+
+            <!-- Factura Pendiente con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="2"
+                    Stroke="#F47920">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Label Text="PENDIENTE" FontSize="11" TextColor="#F47920" FontAttributes="Bold"/>
+                    <Label Text="Período: Abril 2025" FontSize="14" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                    <Label Text="Monto: ₡ 28.450" FontSize="18" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                    <Label Text="Vence: 28 de abril, 2025" FontSize="12" TextColor="#7A5A3A"/>
+
+                    <BoxView HeightRequest="1" BackgroundColor="#F0D0B0" Margin="0,8"/>
+
+                    <Grid ColumnDefinitions="*,*" ColumnSpacing="10">
+                        <Button Grid.Column="0" 
+                                Text="Ver Detalle" 
+                                BackgroundColor="#1E23E6" 
+                                TextColor="White" 
+                                CornerRadius="12"
+                                HeightRequest="40"/>
+
+                        <Button Grid.Column="1" 
+                                Text="Pagar Ahora" 
+                                BackgroundColor="#F47920" 
+                                TextColor="White" 
+                                FontAttributes="Bold"
+                                CornerRadius="12"
+                                HeightRequest="40"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Historial -->
+            <Label Text="Historial" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <!-- Factura Marzo con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="Marzo 2025" 
+                           FontSize="14" 
+                           FontAttributes="Bold" 
+                           TextColor="#2A1A0A"/>
+
+                    <Label Grid.Row="0" Grid.Column="1" 
+                           Text="Pagada ✓" 
+                           FontSize="12" 
+                           FontAttributes="Bold" 
+                           TextColor="#2E7D32"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Text="₡ 24.300" 
+                           FontSize="14" 
+                           TextColor="#7A5A3A"/>
+
+                    <Label Grid.Row="1" Grid.Column="1" 
+                           Text="24 mar 2025" 
+                           FontSize="12" 
+                           TextColor="#BFA080"/>
+                </Grid>
+            </Border>
+
+            <!-- Factura Febrero con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="Febrero 2025" 
+                           FontSize="14" 
+                           FontAttributes="Bold" 
+                           TextColor="#2A1A0A"/>
+
+                    <Label Grid.Row="0" Grid.Column="1" 
+                           Text="Pagada ✓" 
+                           FontSize="12" 
+                           FontAttributes="Bold" 
+                           TextColor="#2E7D32"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Text="₡ 21.850" 
+                           FontSize="14" 
+                           TextColor="#7A5A3A"/>
+
+                    <Label Grid.Row="1" Grid.Column="1" 
+                           Text="22 feb 2025" 
+                           FontSize="12" 
+                           TextColor="#BFA080"/>
+                </Grid>
+            </Border>
+
+            <Button Text="Ver todas las facturas" 
+                    BackgroundColor="#1E23E6" 
+                    TextColor="White" 
+                    CornerRadius="12"
+                    HeightRequest="45"
+                    Margin="0,8,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

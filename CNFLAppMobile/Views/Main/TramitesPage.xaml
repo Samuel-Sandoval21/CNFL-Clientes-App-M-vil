@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.Main.TramitesPage"
+             Title="Trámites"
+             BackgroundColor="#FFF8F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+
+            <Label Text="📋 Trámites" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#2A1A0A"/>
+
+            <Label Text="16 solicitudes en línea, sin filas" 
+                   FontSize="14" 
+                   TextColor="#7A5A3A"/>
+
+            <!-- Trámite Activo con Border en lugar de Frame -->
+            <Label Text="Mis trámites activos" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Label Text="Solicitud servicio nuevo monofásico" FontSize="14" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                    <Label Text="#TR-20482 · NISE 4021" FontSize="12" TextColor="#7A5A3A"/>
+
+                    <BoxView HeightRequest="1" BackgroundColor="#F0D0B0" Margin="0,8"/>
+
+                    <Grid ColumnDefinitions="*,*,*">
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label Text="✅" FontSize="20" HorizontalTextAlignment="Center"/>
+                            <Label Text="Iniciado" FontSize="10" TextColor="#2E7D32" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label Text="⏳" FontSize="20" HorizontalTextAlignment="Center"/>
+                            <Label Text="En proceso" FontSize="10" TextColor="#F47920" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                        <VerticalStackLayout HorizontalOptions="Center">
+                            <Label Text="⬜" FontSize="20" HorizontalTextAlignment="Center"/>
+                            <Label Text="Resuelto" FontSize="10" TextColor="#BFA080" HorizontalTextAlignment="Center"/>
+                        </VerticalStackLayout>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Catálogo de Trámites -->
+            <Label Text="Catálogo de Trámites" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <!-- Trámite 1 con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="📝" FontSize="20" VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                        <Label Text="Cambio de nombre de abonado" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                        <Label Text="Actualizar titular del servicio" FontSize="11" TextColor="#7A5A3A"/>
+                    </VerticalStackLayout>
+
+                    <Label Grid.Column="2" Text="›" FontSize="20" TextColor="#BFA080" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Trámite 2 con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="🔌" FontSize="20" VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                        <Label Text="Desconexión y reconexión" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                        <Label Text="Solicitar corte o reconexión" FontSize="11" TextColor="#7A5A3A"/>
+                    </VerticalStackLayout>
+
+                    <Label Grid.Column="2" Text="›" FontSize="20" TextColor="#BFA080" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Trámite 3 con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="🏠" FontSize="20" VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                        <Label Text="Solicitud de servicio nuevo" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                        <Label Text="Nueva conexión eléctrica" FontSize="11" TextColor="#7A5A3A"/>
+                    </VerticalStackLayout>
+
+                    <Label Grid.Column="2" Text="›" FontSize="20" TextColor="#BFA080" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Trámite 4 con Border en lugar de Frame -->
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto"/>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Column="0" Text="📊" FontSize="20" VerticalOptions="Center"/>
+
+                    <VerticalStackLayout Grid.Column="1" Margin="10,0">
+                        <Label Text="Tarifa residencial horaria" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                        <Label Text="Cambiar a tarifa con horarios" FontSize="11" TextColor="#7A5A3A"/>
+                    </VerticalStackLayout>
+
+                    <Label Grid.Column="2" Text="›" FontSize="20" TextColor="#BFA080" VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <Button Text="Ver todos los trámites" 
+                    BackgroundColor="#1E23E6" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="45"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.Main.InicioPage"
+             Title="Inicio"
+             BackgroundColor="#FFF8F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+
+            <!-- Header -->
+            <VerticalStackLayout>
+                <Label Text="¡Buenos días!" FontSize="14" TextColor="#7A5A3A"/>
+                <Label Text="María González" FontSize="24" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                <Label Text="NIC: 1234567-8 · Cartago Centro" FontSize="12" TextColor="#BFA080"/>
+            </VerticalStackLayout>
+
+            <!-- Tarjeta de Factura con Border en lugar de Frame -->
+            <Border BackgroundColor="#F47920" 
+                    Padding="16"
+                    StrokeThickness="0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="0" Grid.Column="0" 
+                           Text="FACTURA PENDIENTE · NISE 4021" 
+                           FontSize="11" 
+                           TextColor="White" 
+                           Opacity="0.8"/>
+
+                    <Label Grid.Row="1" Grid.Column="0" 
+                           Text="₡ 28.450" 
+                           FontSize="32" 
+                           FontAttributes="Bold" 
+                           TextColor="White"/>
+
+                    <Label Grid.Row="2" Grid.Column="0" 
+                           Text="⚠️ Vence en 3 días" 
+                           FontSize="12" 
+                           TextColor="#FFD200" 
+                           FontAttributes="Bold"/>
+
+                    <Button Grid.Row="1" Grid.Column="1" 
+                            Grid.RowSpan="2"
+                            Text="Pagar ahora" 
+                            BackgroundColor="#FFD200" 
+                            TextColor="#F47920" 
+                            FontAttributes="Bold"
+                            CornerRadius="12"
+                            HeightRequest="40"
+                            WidthRequest="120"
+                            VerticalOptions="Center"/>
+                </Grid>
+            </Border>
+
+            <!-- Accesos Rápidos -->
+            <Label Text="Accesos Rápidos" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*,*" RowSpacing="10" ColumnSpacing="10">
+                <Button Grid.Row="0" Grid.Column="0" 
+                        Text="⚡\nReportar\nAvería" 
+                        BackgroundColor="#FFEBEE" 
+                        TextColor="#E53935" 
+                        CornerRadius="12"
+                        HeightRequest="70"
+                        Clicked="OnReportesClicked"/>
+
+                <Button Grid.Row="0" Grid.Column="1" 
+                        Text="📄\nMi\nFactura" 
+                        BackgroundColor="#E3F2FD" 
+                        TextColor="#0277BD" 
+                        CornerRadius="12"
+                        HeightRequest="70"
+                        Clicked="OnPagosClicked"/>
+
+                <Button Grid.Row="0" Grid.Column="2" 
+                        Text="🗺️\nMapa\nAverías" 
+                        BackgroundColor="#FFF3E0" 
+                        TextColor="#D84315" 
+                        CornerRadius="12"
+                        HeightRequest="70"
+                        IsEnabled="False"/>
+
+                <Button Grid.Row="0" Grid.Column="3" 
+                        Text="🏪\nTienda\nCNFL" 
+                        BackgroundColor="#FFF0E6" 
+                        TextColor="#F47920" 
+                        CornerRadius="12"
+                        HeightRequest="70"
+                        Clicked="OnTiendaClicked"/>
+
+                <Button Grid.Row="1" Grid.Column="0" 
+                        Text="📋\nMis\nTrámites" 
+                        BackgroundColor="#F3E5F5" 
+                        TextColor="#7B1FA2" 
+                        CornerRadius="12"
+                        HeightRequest="70"
+                        Clicked="OnTramitesClicked"/>
+
+                <Button Grid.Row="1" Grid.Column="1" 
+                        Text="📡\nInternet\n5G" 
+                        BackgroundColor="#E0F2F1" 
+                        TextColor="#00695C" 
+                        CornerRadius="12"
+                        HeightRequest="70"/>
+
+                <Button Grid.Row="1" Grid.Column="2" 
+                        Text="📢\nComuni-\ncados" 
+                        BackgroundColor="#F1F8E9" 
+                        TextColor="#558B2F" 
+                        CornerRadius="12"
+                        HeightRequest="70"/>
+
+                <Button Grid.Row="1" Grid.Column="3" 
+                        Text="👤\nMi\nPerfil" 
+                        BackgroundColor="#FFF8E1" 
+                        TextColor="#F57F17" 
+                        CornerRadius="12"
+                        HeightRequest="70"
+                        Clicked="OnPerfilClicked"/>
+            </Grid>
+
+            <!-- Consumo con Border en lugar de Frame -->
+            <Label Text="Mi Consumo" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Grid ColumnDefinitions="*,*,*">
+                        <Label Grid.Column="0" Text="Hoy" FontSize="11" TextColor="#7A5A3A" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="1" Text="Promedio" FontSize="11" TextColor="#7A5A3A" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="2" Text="vs mes anterior" FontSize="11" TextColor="#7A5A3A" HorizontalTextAlignment="Center"/>
+                    </Grid>
+
+                    <Grid ColumnDefinitions="*,*,*" Margin="0,4,0,0">
+                        <Label Grid.Column="0" Text="18 kWh" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="1" Text="14 kWh" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="2" Text="↑ 32%" FontSize="16" FontAttributes="Bold" TextColor="#E53935" HorizontalTextAlignment="Center"/>
+                    </Grid>
+
+                    <BoxView HeightRequest="4" BackgroundColor="#F0D0B0" Margin="0,8" CornerRadius="2"/>
+                    <Label Text="Última lectura: 742 kWh · Acumulado: 198 kWh" FontSize="12" TextColor="#7A5A3A" HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Servicios con Border en lugar de Frame -->
+            <Label Text="Tus Servicios" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout Spacing="8">
+                    <Grid ColumnDefinitions="*,*">
+                        <Label Grid.Column="0" Text="Asistencia Eléctrica" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                        <Label Grid.Column="1" Text="Activo" FontSize="12" TextColor="#2E7D32" HorizontalTextAlignment="End"/>
+                    </Grid>
+                    <Label Text="Plan Plus · ₡6.900/mes" FontSize="12" TextColor="#7A5A3A"/>
+
+                    <BoxView HeightRequest="1" BackgroundColor="#F0D0B0"/>
+
+                    <Grid ColumnDefinitions="*,*">
+                        <Label Grid.Column="0" Text="Internet 5G" FontSize="13" FontAttributes="Bold" TextColor="#2A1A0A"/>
+                        <Label Grid.Column="1" Text="Activo" FontSize="12" TextColor="#2E7D32" HorizontalTextAlignment="End"/>
+                    </Grid>
+                    <Label Text="Plan Hogar 300 · ₡29.900/mes" FontSize="12" TextColor="#7A5A3A"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <Button Text="Cerrar Sesión" 
+                    BackgroundColor="#FFEBEE" 
+                    TextColor="#E53935" 
+                    CornerRadius="12"
+                    HeightRequest="45"
+                    Margin="0,8,0,0"
+                    Clicked="OnCerrarSesionClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

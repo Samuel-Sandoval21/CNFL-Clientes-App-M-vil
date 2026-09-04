@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.Main.ReportesPage"
+             Title="Reportes"
+             BackgroundColor="#FFF8F3">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="16" Padding="16">
+
+            <Label Text="⚡ Reportar Avería" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   TextColor="#2A1A0A"/>
+
+            <Label Text="Reporta una avería con foto y ubicación GPS" 
+                   FontSize="14" 
+                   TextColor="#7A5A3A"/>
+
+            <!-- Mapa simulado con Border en lugar de Frame -->
+            <Border BackgroundColor="#E8F5E9" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#A5D6A7"
+                    HeightRequest="150">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="16"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                    <Label Text="📍 Mapa Interactivo" 
+                           FontSize="16" 
+                           FontAttributes="Bold" 
+                           TextColor="#2E7D32" 
+                           HorizontalTextAlignment="Center"/>
+                    <Label Text="Cargando ubicación..." 
+                           FontSize="12" 
+                           TextColor="#4CAF50" 
+                           HorizontalTextAlignment="Center"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Tipos de Avería -->
+            <Label Text="Tipo de Avería" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <RadioButton x:Name="AlumbradoPublico" Content="Alumbrado Público" GroupName="TipoAveria"/>
+            <RadioButton x:Name="ElectricaPropia" Content="Avería Eléctrica Propia" GroupName="TipoAveria"/>
+            <RadioButton x:Name="ElectricaAjena" Content="Avería Eléctrica Ajena" GroupName="TipoAveria"/>
+
+            <!-- Descripción -->
+            <VerticalStackLayout Spacing="4" Margin="0,8,0,0">
+                <Label Text="Descripción" FontSize="12" FontAttributes="Bold" TextColor="#7A5A3A"/>
+                <Editor Placeholder="Describe el problema..." 
+                        BackgroundColor="#FFFFFF"
+                        HeightRequest="80"/>
+            </VerticalStackLayout>
+
+            <!-- Adjuntar Foto -->
+            <Button Text="📷 Adjuntar Foto" 
+                    BackgroundColor="#64B9CD" 
+                    TextColor="White" 
+                    CornerRadius="12"
+                    HeightRequest="45"/>
+
+            <!-- Dirección -->
+            <VerticalStackLayout Spacing="4">
+                <Label Text="Dirección" FontSize="12" FontAttributes="Bold" TextColor="#7A5A3A"/>
+                <Entry Placeholder="Barrio Los Ángeles, Cartago" 
+                       BackgroundColor="#FFFFFF"
+                       HeightRequest="50"/>
+            </VerticalStackLayout>
+
+            <!-- Datos precargados con Border en lugar de Frame -->
+            <Border BackgroundColor="#E3F2FD" 
+                    Padding="12"
+                    StrokeThickness="1"
+                    Stroke="#90CAF9">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Label Text="📋 Datos Precargados" FontSize="12" FontAttributes="Bold" TextColor="#0277BD"/>
+                    <Label Text="NISE: 4021" FontSize="12" TextColor="#0277BD"/>
+                    <Label Text="Dirección: Barrio Los Ángeles, Cartago" FontSize="12" TextColor="#0277BD"/>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Estado del Reporte -->
+            <Label Text="Seguimiento de tu Reporte" FontSize="16" FontAttributes="Bold" TextColor="#2A1A0A" Margin="0,8,0,0"/>
+
+            <Border BackgroundColor="#FFFFFF" 
+                    Padding="16"
+                    StrokeThickness="1"
+                    Stroke="#F0D0B0">
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="12"/>
+                </Border.StrokeShape>
+                <VerticalStackLayout>
+                    <Grid ColumnDefinitions="*,*,*,*">
+                        <Label Grid.Column="0" Text="📝" FontSize="20" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="1" Text="🔍" FontSize="20" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="2" Text="🚗" FontSize="20" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="3" Text="✅" FontSize="20" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                    <Grid ColumnDefinitions="*,*,*,*">
+                        <Label Grid.Column="0" Text="Reportado" FontSize="10" TextColor="#2E7D32" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="1" Text="En revisión" FontSize="10" TextColor="#BFA080" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="2" Text="En camino" FontSize="10" TextColor="#BFA080" HorizontalTextAlignment="Center"/>
+                        <Label Grid.Column="3" Text="Resuelto" FontSize="10" TextColor="#BFA080" HorizontalTextAlignment="Center"/>
+                    </Grid>
+                </VerticalStackLayout>
+            </Border>
+
+            <!-- Botón Enviar -->
+            <Button Text="Enviar Reporte" 
+                    BackgroundColor="#F47920" 
+                    TextColor="White" 
+                    FontAttributes="Bold"
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    Margin="0,8,0,0"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
