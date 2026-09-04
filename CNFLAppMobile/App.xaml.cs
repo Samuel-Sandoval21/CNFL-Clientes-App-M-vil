@@ -1,4 +1,4 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using CNFLAppMobile.Views;
 
 namespace CNFLAppMobile
 {
@@ -11,7 +11,8 @@ namespace CNFLAppMobile
 
         protected override Window CreateWindow(IActivationState? activationState)
         {
-            return new Window(new AppShell());
+            // Iniciar en Home Pública (sin login)
+            return new Window(new HomePublicPage());
         }
     }
 }

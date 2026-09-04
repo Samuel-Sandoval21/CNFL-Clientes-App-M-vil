@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CNFLAppMobile.Views.LoginPage"
+             BackgroundColor="#F2F4F8">
+
+    <ScrollView>
+        <StackLayout Padding="30" Spacing="16" VerticalOptions="Center">
+
+            <!-- Logo -->
+            <StackLayout HorizontalOptions="Center" Spacing="4" Margin="0,0,0,20">
+                <Label Text="⚡"
+                       FontSize="48"
+                       HorizontalOptions="Center" />
+                <Label Text="CNFL"
+                       FontSize="36"
+                       FontAttributes="Bold"
+                       TextColor="#FF692D"
+                       HorizontalOptions="Center" />
+                <Label Text="Tu energía, en una sola app"
+                       FontSize="14"
+                       TextColor="#727A86"
+                       HorizontalOptions="Center" />
+            </StackLayout>
+
+            <!-- Usuario -->
+            <Label Text="USUARIO"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   TextColor="#727A86"
+                   TextTransform="Uppercase" />
+            <Border BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="0">
+                <Border.Shadow>
+                    <Shadow Brush="#000000"
+                            Opacity="0.04"
+                            Radius="8"
+                            Offset="0,2" />
+                </Border.Shadow>
+                <Entry x:Name="EntryUsuario"
+                       Placeholder="Usuario o cédula"
+                       FontSize="16"
+                       TextColor="#0E1116"
+                       BackgroundColor="Transparent"
+                       Margin="16,14">
+                    <Entry.PlaceholderColor>
+                        <Color>#B0B8C5</Color>
+                    </Entry.PlaceholderColor>
+                </Entry>
+            </Border>
+
+            <!-- Contraseña -->
+            <Label Text="CONTRASEÑA"
+                   FontSize="12"
+                   FontAttributes="Bold"
+                   TextColor="#727A86"
+                   TextTransform="Uppercase"
+                   Margin="0,8,0,0" />
+            <Border BackgroundColor="White"
+                    StrokeThickness="0"
+                    StrokeShape="RoundRectangle 12"
+                    Padding="0">
+                <Border.Shadow>
+                    <Shadow Brush="#000000"
+                            Opacity="0.04"
+                            Radius="8"
+                            Offset="0,2" />
+                </Border.Shadow>
+                <Grid>
+                    <Entry x:Name="EntryContrasena"
+                           Placeholder="Contraseña"
+                           IsPassword="True"
+                           FontSize="16"
+                           TextColor="#0E1116"
+                           BackgroundColor="Transparent"
+                           Margin="16,14">
+                        <Entry.PlaceholderColor>
+                            <Color>#B0B8C5</Color>
+                        </Entry.PlaceholderColor>
+                    </Entry>
+                    <Button x:Name="BtnTogglePassword"
+                            Text="👁️"
+                            BackgroundColor="Transparent"
+                            WidthRequest="44"
+                            HeightRequest="44"
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            Clicked="OnTogglePasswordClicked" />
+                </Grid>
+            </Border>
+
+            <!-- Olvidaste contraseña -->
+            <Label Text="¿Olvidaste tu contraseña?"
+                   FontSize="13"
+                   TextColor="#1E23E6"
+                   FontAttributes="Bold"
+                   HorizontalOptions="End">
+                <Label.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnOlvidarClaveTapped" />
+                </Label.GestureRecognizers>
+            </Label>
+
+            <!-- Botón Iniciar Sesión -->
+            <Button x:Name="BtnIniciarSesion"
+                    Text="Iniciar Sesión"
+                    BackgroundColor="#1E23E6"
+                    TextColor="White"
+                    CornerRadius="12"
+                    HeightRequest="50"
+                    FontSize="16"
+                    FontAttributes="Bold"
+                    Margin="0,8,0,0"
+                    Clicked="OnIniciarSesionClicked">
+                <Button.Shadow>
+                    <Shadow Brush="#1E23E6"
+                            Opacity="0.25"
+                            Radius="12"
+                            Offset="0,4" />
+                </Button.Shadow>
+            </Button>
+
+            <!-- Registro -->
+            <StackLayout HorizontalOptions="Center" Spacing="4" Margin="0,16,0,0">
+                <Label Text="¿No tienes cuenta?"
+                       FontSize="13"
+                       TextColor="#727A86"
+                       HorizontalOptions="Center" />
+                <Label Text="Regístrate aquí"
+                       FontSize="14"
+                       FontAttributes="Bold"
+                       TextColor="#FF692D"
+                       HorizontalOptions="Center">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnRegistroTapped" />
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

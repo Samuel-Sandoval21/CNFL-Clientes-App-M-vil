@@ -3,12 +3,47 @@
     x:Class="CNFLAppMobile.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:CNFLAppMobile"
-    Title="CNFLAppMobile">
+    xmlns:views="clr-namespace:CNFLAppMobile.Views"
+    Shell.FlyoutBehavior="Disabled">
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <!-- Rutas Públicas -->
+    <ShellContent Title="HomePublic"
+                  ContentTemplate="{DataTemplate views:HomePublicPage}"
+                  Route="HomePublicPage" />
+
+    <ShellContent Title="Login"
+                  ContentTemplate="{DataTemplate views:LoginPage}"
+                  Route="LoginPage" />
+
+    <ShellContent Title="Registro"
+                  ContentTemplate="{DataTemplate views:RegistroPage}"
+                  Route="RegistroPage" />
+
+    <ShellContent Title="RecuperarClave"
+                  ContentTemplate="{DataTemplate views:RecuperarClavePage}"
+                  Route="RecuperarClavePage" />
+
+    <!-- TabBar para usuarios logueados -->
+    <TabBar>
+        <Tab Title="Inicio" Icon="home.png">
+            <ShellContent ContentTemplate="{DataTemplate views:InicioPage}"
+                          Route="InicioPage" />
+        </Tab>
+        <Tab Title="Trámites" Icon="tramites.png">
+            <ShellContent ContentTemplate="{DataTemplate views:TramitesPage}" />
+        </Tab>
+        <Tab Title="Pagos" Icon="pagos.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PagosPage}" />
+        </Tab>
+        <Tab Title="Tienda" Icon="tienda.png">
+            <ShellContent ContentTemplate="{DataTemplate views:TiendaPage}" />
+        </Tab>
+        <Tab Title="Reportes" Icon="reportes.png">
+            <ShellContent ContentTemplate="{DataTemplate views:ReportesPage}" />
+        </Tab>
+        <Tab Title="Perfil" Icon="perfil.png">
+            <ShellContent ContentTemplate="{DataTemplate views:PerfilPage}" />
+        </Tab>
+    </TabBar>
 
 </Shell>
